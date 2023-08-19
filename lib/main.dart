@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Screens/user_selection_page.dart';
+import 'Screens/create_account.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: 
-      home: UserSelectionPage(),
+      home: CreateAccount(),
     );
   }
 }
