@@ -47,7 +47,7 @@ class LoginPage extends StatelessWidget {
                 // User name
                 MyTextFeild(
                   controller: usernameController,
-                  hintText: 'Username',
+                  hintText: 'User ID',
                   obscureText: false,
                 ),
 
