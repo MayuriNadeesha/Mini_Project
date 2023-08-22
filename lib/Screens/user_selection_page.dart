@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_page.dart';
+
 
 class UserSelectionPage extends StatelessWidget {
   @override
@@ -17,33 +19,60 @@ class UserSelectionPage extends StatelessWidget {
             ),
             SizedBox(height: 52),
             ElevatedButton(
-              onPressed: () {  
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xFFDFEEEB),
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
-              ),
-              child: Text('Teacher', style: TextStyle(color: Colors.black,fontSize: 16,fontFamily: 'Poppins',fontWeight: FontWeight.w500,),)
-            ),
-            
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return LoginPage();
+                      },
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFDFEEEB),
+                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+                ),
+                child: Text(
+                  'Teacher',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
+                  ),
+                )),
             SizedBox(height: 52),
             Image.asset(
-              'Images/user.png', 
+              'Images/user.png',
               height: 126,
               width: 126,
             ),
             SizedBox(height: 52),
             ElevatedButton(
-              onPressed: () {
-               
-              },
-              style: ElevatedButton.styleFrom(
-                primary:Color(0xFFDFEEEB),
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
-              ),
-              child: Text('Parent',style: TextStyle(color: Colors.black,fontSize: 16,fontFamily: 'Poppins',fontWeight: FontWeight.w500,),
-)
-            ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return LoginPage();
+                      },
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFDFEEEB),
+                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+                ),
+                child: Text(
+                  'Parent',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
+                  ),
+                )),
           ],
         ),
       ),
