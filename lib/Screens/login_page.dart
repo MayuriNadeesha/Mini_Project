@@ -3,6 +3,8 @@ import 'package:mini_project/components/my_button.dart';
 import 'package:mini_project/components/my_textfeild.dart';
 import 'package:mini_project/components/square_tile.dart';
 
+import 'create_account.dart';
+
 class LoginPage extends StatelessWidget {
   // Text editing controllers
   final usernameController = TextEditingController();
@@ -44,7 +46,6 @@ class LoginPage extends StatelessWidget {
 
                 const SizedBox(height: 30),
 
-                // User name
                 MyTextFeild(
                   controller: usernameController,
                   hintText: 'User ID',
@@ -53,7 +54,6 @@ class LoginPage extends StatelessWidget {
 
                 const SizedBox(height: 30),
 
-                // Password
                 MyTextFeild(
                   controller: passwordController,
                   hintText: 'Password',
@@ -62,7 +62,6 @@ class LoginPage extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
-                // Forgot password?
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(
@@ -78,14 +77,12 @@ class LoginPage extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
-                // Sign in button
                 MyButton(
                   onTap: signUserIn,
                 ),
 
                 const SizedBox(height: 20),
 
-                // Or continue with
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(
@@ -115,23 +112,19 @@ class LoginPage extends StatelessWidget {
 
                 const SizedBox(height: 20),
 
-                // Google and Facebook sign in button
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Google button
                     SquareTile(imagepath: 'Images/Google.webp'),
 
                     const SizedBox(width: 20),
 
-                    // Facebook button
                     SquareTile(imagepath: 'Images/Facebook.jpeg'),
                   ],
                 ),
 
                 const SizedBox(height: 10),
 
-                // Not a member? Register now
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -140,11 +133,19 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                     const SizedBox(width: 4),
-                    Text(
-                      'Register now',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CreateAccount()),
+                        );
+                      },
+                      child: Text(
+                        'Register now',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
@@ -156,4 +157,10 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: LoginPage(),
+  ));
 }
