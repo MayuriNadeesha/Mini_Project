@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
+import 'user_selection_page.dart'; // Import your user_selection_page.dart
 
-class HomePage extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Add a delay and navigate to the UserSelectionPage
+    Future.delayed(Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => UserSelectionPage()),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, 
-
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child:
-                  Image.asset('Images/logo.png'),
-            ),
+            Image.asset('Images/logo.png'),
           ],
         ),
       ),
